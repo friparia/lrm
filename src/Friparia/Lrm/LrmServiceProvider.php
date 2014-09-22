@@ -19,6 +19,8 @@ class LrmServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('friparia/lrm');
+        
+        include __DIR__.'/../../routes.php';
 	}
 
 	/**
@@ -28,7 +30,9 @@ class LrmServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		//
+        $this->app['lrm'] = $this->app->share(function($app){
+            return new Lrm;
+        });
 	}
 
 	/**
