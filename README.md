@@ -28,11 +28,11 @@ It is still under developing. So it only support the common function just like `
 
 ## Todo
 
-[] Support `resource()` `controller()` functions
+[ ] Support `resource()` `controller()` functions
 
-[] Support filters
+[ ] Support filters
 
-[] Support group manages
+[ ] Support group manages
 
-[] Support editing
+[ ] Support editing
 
