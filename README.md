@@ -24,15 +24,17 @@ Then you can manage your routes;
 
 ## Questions
 
-It is still under developing. So it only support the common function just like `get`, `post`, `put`, `patch`, `delete`. And maybe have some bugs in writing callbacks. Please let me know!
+It is still under developing. So it only support the common function just like `get`, `post`, `put`, `patch`, `delete`. 
+And maybe have some bugs in writing callbacks. 
+Please let me know in issues!!
 
 ## Todo
 
-[ ] Support `resource()` `controller()` functions
+- [ ] Support `resource()`, `controller()` functions
 
-[ ] Support filters
+- [ ] Support filters
 
-[ ] Support group manages
+- [ ] Support group manages
 
-[ ] Support editing
+- [ ] Support editing
 
