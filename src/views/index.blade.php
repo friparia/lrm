@@ -96,25 +96,25 @@
               <td>{{ $route->getPath() }}</td>
               <td>{{ $route->getActionName() }}</td>
               <td>
-                <button class="editBtn" data-id="{{ key($routes) }}">修改</button>
-                <button class="deleteBtn" data-id="{{ key($routes) }}">删除</button>
+                <button class="deleteBtn" data-id="{{ key($routes) }}">Delete</button>
               </td>
             </tr>
             <?php next($routes); ?>
             @endwhile
           </tbody>
         </table>
+        <h1>Add A Route</h1>
         <form method="post" action="lrm">
-          路由<input name="uri" type="text"/>
-          请求方法<select name="method">
+          Route<input name="uri" type="text"/>
+          Method<select name="method">
             <option value="get">GET</option>
             <option value="post">POST</option>
             <option value="put">PUT</option>
             <option value="patch">PATCH</option>
             <option value="delete">DELETE</option>
           </select>
-          通信方法<input name="action" type="text"/>
-          <button>提交</button>
+          Corresponding Action<input name="action" type="text"/>
+          <button>Submit</button>
         </form>
 
       </div>
