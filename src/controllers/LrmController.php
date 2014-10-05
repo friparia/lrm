@@ -1,9 +1,15 @@
 <?php namespace Friparia\Lrm;
 class LrmController extends \Controller{
+    public function destory($id){
+        $lrm = Lrm::getInstance();
+        $lrm->deleteRoute($id);
+        $lrm->save();
+        return \Response::json();
+    }
+
     public function index(){
         $lrm = Lrm::getInstance();
         $routeCollection = $lrm->getRoutes();
-        // dd($routeCollection);
         return \View::make('lrm::index')->with('routes', $routeCollection);
 
     }
@@ -25,8 +31,18 @@ class LrmController extends \Controller{
     }
 
     public function update($id){
+        $lrm = Lrm::getInstance();
+        $lrm->updateRoute(\Input::get('method'), \Input::get('uri'), \Input::get('action'), $id);
+        $lrm->save();
+        return \Response::json();
     }
 
-    public function destory($id){
+    public function destroy($id){
+
+        $lrm = Lrm::getInstance();
+        $lrm->deleteRoute($id);
+        $lrm->save();
+        return \Response::json();
     }
+
 }

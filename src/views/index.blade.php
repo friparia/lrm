@@ -3,6 +3,22 @@
   <head>
     <meta charset="UTF-8">
     <title></title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.deleteBtn').click(function(){
+          var id = $(this).attr('data-id');
+          $.ajax({
+            url : 'lrm/'+id,
+            dataType : 'json',
+            type : 'DELETE',
+            success : function(){
+              location.reload();
+            }
+          });
+        });
+      });
+    </script>
   </head>
   <body>
     <form method="post" action="lrm">
@@ -23,14 +39,20 @@
         <td width="10%"><h4>HTTP Method</h4></td>
         <td width="10%"><h4>Route</h4></td>
         <td width="10%"><h4>Corresponding Action</h4></td>
+        <td width="10%">
+          <h4>Operation</h4>
+        </td>
       </tr>
-      @foreach ($routes as $route)
+      @while ($route = current($routes))
       <tr>
         <td>{{ $route->getMethods()[0] }}</td>
         <td>{{ $route->getPath() }}</td>
         <td>{{ $route->getActionName() }}</td>
+        <td><button class="deleteBtn" data-id="{{ key($routes) }}">删除</button>
+</td>
       </tr>
-      @endforeach
+      <?php next($routes); ?>
+      @endwhile
     </table>
 
   </body>
