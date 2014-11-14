@@ -1,4 +1,8 @@
-# Laravel Routing Management
+# Laravel Routes Management
+
+[中文版README](https://github.com/friparia/lrm/blob/master/README.chs.md)
+
+![preview](https://github.com/friparia/lrm/blob/master/rt.jpg)
 
 ## Installation
 
@@ -18,7 +22,7 @@ Remember you should change the permission to 644 when you are not in the debug m
 
 Visit the `lrm` in your web browser, like this:
 
-    "localhost/public/lrm"
+    "www.example.com/public/lrm"
 
 Then you can manage your routes;
 
