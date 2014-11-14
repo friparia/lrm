@@ -25,7 +25,7 @@ class LrmController extends \Controller{
         $lrm = Lrm::getInstance();
         $lrm->addRoute(\Input::get('method'), \Input::get('uri'), \Input::get('action'));
         $lrm->save();
-        return \Response::json();
+        return \Redirect::to("lrm");
     }
 
     public function edit($id){
